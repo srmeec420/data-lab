@@ -1,0 +1,16 @@
+create database students;
+use students;
+drop database students;
+show databases;
+create database students;
+use students;
+create table mca(id int not null auto_increment,name varchar(45) not null,dept varchar(35) not null,age int not null,primary key(id));
+show tables;
+describe mca;
+alter table mca add blood_group varchar(10) not null;
+insert into mca values(01,'Jack','MCA',22,'B+');
+insert into mca values(02,'Kitty','MCA',21,'O+');
+select*from mca;
+update mca set name='Jhon',age=31 where id=2;
+delete from mca where id=2;
+drop table mca;
