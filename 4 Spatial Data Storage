@@ -1,0 +1,9 @@
+create database 4program;
+use 4program;
+CREATE TABLE `test` (`id` INT NOT NULL AUTO_INCREMENT,`geom` GEOMETRY NULL,PRIMARY KEY (`id`));
+INSERT INTO `test`(`geom`)VALUES(st_geomfromtext('polygon((0 0,0 3,3 0, 2 2,0 0),(1 1,1 2,2 1,2 2, 1 1))'));
+select geom from test; 
+INSERT INTO `test`(`geom`)VALUES(st_geomfromtext('POLYGON((100 100,200 300,300 100, 100 100))', 0));
+INSERT INTO `test` (`geom`)VALUES (ST_GeomFromText('MULTILINESTRING((0 0, 1 1, 2 2, 3 3, 4 4))'));
+INSERT INTO `test` (`geom`)VALUES (ST_GeomFromText('MULTILINESTRING((12 12, 22 22), (19 19, 32 18))'));
+SELECT id, ST_AsText(geom) AS geom_text FROM `test`;
