@@ -1,0 +1,22 @@
+use demo
+
+db.users.insertOne({ name: "Vysya", age: 24 })
+
+db.users.insertMany([{ name: "Raj", age: 25 },{ name: "Asha", age: 23 }])
+
+db.users.find()
+
+db.users.find({ age: 24 })
+
+db.users.updateOne({ name: "Vysya" }, { $set: { age: 25 } })
+
+db.users.deleteOne({ name: "Raj" })
+
+show collections
+
+show dbs
+
+db.users.drop()
+
+db.dropDatabase()
+
