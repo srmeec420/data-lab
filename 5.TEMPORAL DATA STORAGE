@@ -1,0 +1,24 @@
+create database program5;
+use program5;
+create table customer(Cust_id int PRIMARY KEY,cust_name text,city text,occupation text);
+create table order1(order_id int PRIMARY KEY,prod_name text,price text);
+insert into customer values(1001,'NATARAJAN S','RASIPURAM','ASST_PROF');
+insert into customer values(1002,'SUNDAR','SALEM','ASST_PROF');
+insert into customer values(1003,'SURESH','ATHUR','ASST_PROF');
+insert into customer values(1004,'UDAY','SALEM','ASST_PROF');
+insert into customer values(1005,'MUNIYASAMY','AIYOTHIYA','ASST_PROF');
+select * from customer;
+insert into order1 values(1001,'LAPTOP','1000000');
+insert into order1 values(1002,'MOBILE','10000');
+insert into order1 values(1003,'TV','15000');
+insert into order1 values(1004,'RECHARGE','1500');
+insert into order1 values(1005,'BAG','4500');
+show tables; 
+DESCRIBE customer;
+DESCRIBE ORDER1;
+CREATE TEMPORARY TABLE temp_customers AS
+SELECT c.cust_name, c.city, o.prod_name, o.price
+FROM order1 o
+INNER JOIN customer c ON c.cust_id = o.order_id
+ORDER BY o.price DESC;
+select * from temp_customers;
