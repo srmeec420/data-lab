@@ -1,0 +1,38 @@
+Create DataBase:
+create database students;
+
+Select DataBase:
+use students;
+
+Drop Database: 
+drop database students;
+
+Show Database:
+show databases;
+
+Create Table: 
+ create database students;
+ use students;
+
+  create table mca(id int not null auto_increment,name varchar(45) not null,dept varchar(35) not null,age int not null,primary key(id));
+  show tables;
+  describe mca;
+
+Alter Table: 
+  alter table mca add blood_group varchar(10) not null;
+
+Insert Record: 
+ insert into mca values(01,'Jack','MCA',22,'B+');
+ insert into mca values(02,'Kitty','MCA',21,'O+');
+
+Show all records:
+ select*from mca;
+
+ Update Record:
+   update mca set name='Jhon',age=31 where id=2;
+
+Delete Record:
+ delete from mca where id=2;
+
+Drop Table:
+ drop table mca;
